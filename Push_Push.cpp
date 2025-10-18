@@ -8,11 +8,8 @@ void solve(){
     for(int i=0; i<n; i++){
         cin>>val;
         
-        if(i%2==0){
-            dq.push_back(val);
-        }else{
-            dq.push_front(val);
-        }
+        if(i%2) dq.push_front(val);
+        else dq.push_back(val);
         
         forward_print=!forward_print;
     }
@@ -42,12 +39,8 @@ void solve(){
     for(int i=0; i<n; i++){
         cin>>val;
         
-        if(!rvrs_mode){
-            dq.push_back(val);
-        }
-        else{
-            dq.push_front(val);
-        }
+        if(!rvrs_mode) dq.push_back(val);
+        else dq.push_front(val);
         
         rvrs_mode=!rvrs_mode;
     }
